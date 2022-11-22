@@ -1,11 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
+import { styles } from './src/theme/LaunchTheme';
+import LaunchScreen from './src/screens/LaunchScreen';
 
 export const App = () => {
   return (
-    <View>
-      <Text>Hola mundo desde React Native</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor="black" />
+      <LaunchScreen />
+    </SafeAreaView>
   );
 };
 
