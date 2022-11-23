@@ -6,8 +6,8 @@ import { styles } from '../theme/LaunchTheme';
 
 const LaunchScreen = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.logo}>
+    <View>
+      <View style={styles.container}>
         <LogoLaunch />
       </View>
       <TitleLaunch />
