@@ -1,14 +1,14 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import 'react-native-gesture-handler';
 import LoginUserScreen from './src/screens/LoginUserScreen';
-import { styles } from './src/theme/LaunchTheme';
+import { NavigationContainer } from '@react-navigation/native';
 //import LaunchScreen from './src/screens/LaunchScreen';
 
 export const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <NavigationContainer>
       <LoginUserScreen />
-    </SafeAreaView>
+    </NavigationContainer>
   );
 };
 
