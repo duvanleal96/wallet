@@ -29,11 +29,11 @@ export const stylesLoginUser = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     width: '100%',
-    minHeight: 100,
+    minHeight: 50,
   },
   text: {
     color: 'black',
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '400',
   },
   btn: {
@@ -92,14 +92,5 @@ export const stylesLoginUser = StyleSheet.create({
     marginRight: 8,
     marginLeft: 8,
     color: 'rgba(0, 0, 0, 0.6)',
-  },
-  textLogo: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: 'black',
-    fontFamily: 'Montserrat',
-  },
-  prupleText: {
-    color: '#6202EE',
   },
 });
