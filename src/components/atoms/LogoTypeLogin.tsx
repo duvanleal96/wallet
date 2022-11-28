@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
-import { stylesLoginUser } from '../../theme/LoginUserTheme';
 
 interface Props {
   size?: number;
@@ -18,18 +17,19 @@ const LogoTypeLogin = ({ size, customStyle }: Props) => {
 function getTextStyles(size?: number, customStyle?: any) {
   return size
     ? { ...style.textLogo, fontSize: size, ...customStyle }
-    : stylesLoginUser.logo;
+    : style.textLogo;
 }
 export default LogoTypeLogin;
 
 const style = StyleSheet.create({
   textLogo: {
-    fontSize: 20,
-    fontWeight: '500',
+    fontSize: 18,
+    fontWeight: '700',
     color: 'black',
     fontFamily: 'Montserrat',
+    bottom: -50,
   },
   prupleText: {
-    color: '#6202EE',
+    color: 'purple',
   },
-})
+});
