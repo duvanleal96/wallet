@@ -6,19 +6,19 @@ import LogoTypeLogin from '../atoms/LogoTypeLogin';
 const Logo = () => {
   return (
     <View style={styles.logoContainer}>
-      <LogoLaunch size={60} />
+      <LogoLaunch size={100} />
       <LogoTypeLogin />
     </View>
   );
 };
 const styles = StyleSheet.create({
   logoContainer: {
-    flex: 4,
+    flex: 2,
     width: '100%',
-    height: 250,
+    height: 400,
     justifyContent: 'center',
     alignItems: 'center',
-    minHeight: 150,
+    minHeight: 100,
   },
 });
 
