@@ -3,8 +3,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StackNavigation } from './StackNavigation';
 import { MyDrawerContentComponentProps } from '../interface/MyDrawerContentComponentProps';
 import { MenuOptions } from '../components/organisms/MenuOptions';
-import { AccountScreen } from '../screens/AccountScreen';
-import { PaymentScreen } from '../screens/PaymentScreen';
+import { TabNavigation } from './TabNavigation';
 
 const Drawer = createDrawerNavigator();
 
@@ -25,8 +24,8 @@ export function NavigationDrawer() {
         }}
       />
       <Drawer.Screen
-        name="AccountScreen"
-        component={AccountScreen}
+        name="TabNavigation"
+        component={TabNavigation}
         options={{
           headerTintColor: 'white',
           title: 'MyApp',
@@ -36,7 +35,6 @@ export function NavigationDrawer() {
           },
         }}
       />
-      <Drawer.Screen name="PaymentScreen" component={PaymentScreen} />
     </Drawer.Navigator>
   );
 }

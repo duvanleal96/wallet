@@ -14,4 +14,13 @@ export const StyleAccountTheme = StyleSheet.create({
     position: 'absolute',
     width: 1000,
   },
+  screenContainer: {
+    flex: 1,
+  },
+  balanceContainer: {
+    flex: 1,
+  },
+  movementContainer: {
+    flex: 1,
+  },
 });

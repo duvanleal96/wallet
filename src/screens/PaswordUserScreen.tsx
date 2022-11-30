@@ -11,7 +11,7 @@ const PasswordUserScreen = ({ navigation }: MyStackScreenProps) => {
   return (
     <View style={styles.main}>
       <Logo />
-      <UserPasswordForm action={() => navigation.navigate('AccountScreen')} />
+      <UserPasswordForm action={() => navigation.navigate('TabNavigation')} />
       <RuleLogin text="or use" />
       <ButtonsLoginIcons />
     </View>
