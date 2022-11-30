@@ -7,4 +7,10 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 2,
   },
+  listContainer: { marginTop: 10 },
+  titlesContainer: {
+    alignItems: 'center',
+    paddingTop: 10,
+    paddingBottom: 28,
+  },
 });

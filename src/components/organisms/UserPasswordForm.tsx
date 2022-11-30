@@ -7,8 +7,8 @@ import LoginButon from '../atoms/LoginButon';
 interface Props {
   action?: () => void;
 }
-export const UserLoginForm = ({ action }: Props) => {
-  const [text, onChangeText] = React.useState('Email or Username');
+export const UserPasswordForm = ({ action }: Props) => {
+  const [text, onChangeText] = React.useState('Password');
 
   return (
     <View style={stylesLoginUser.formContainer}>
