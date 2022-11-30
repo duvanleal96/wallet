@@ -1,11 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { PaymentScreen } from '../screens/PaymentScreen';
-import { LoansScreen } from '../screens/LoansScreen';
 import { AccountScreen } from '../screens/AccountScreen';
 import IconIonicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Icon3MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { LoansScreen } from '../screens/LoansScreen';
 
 const Tab = createBottomTabNavigator();
 
