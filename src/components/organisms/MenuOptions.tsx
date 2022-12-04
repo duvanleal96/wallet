@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import { MyDrawerContentComponentProps } from '../../interface/MyDrawerContentComponentProps';
 import { stylesLoginUser } from '../../theme/LoginUserTheme';
@@ -16,8 +16,6 @@ export const MenuOptions = ({ navigation }: MyDrawerContentComponentProps) => {
         <TextMenu />
       </View>
       <View style={styleMenuTheme.containerRule}>
-        <View style={stylesLoginUser.line} />
-        <Text></Text>
         <View style={stylesLoginUser.line} />
       </View>
       <View style={styleMenuTheme.container}>

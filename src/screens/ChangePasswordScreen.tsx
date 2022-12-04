@@ -7,12 +7,12 @@ import { styles } from '../theme/LaunchTheme';
 export const ChangePasswordScreen = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.basicIputsContainer}>
+      <View>
         <FormInput icon="person" placeholder="Current password" />
         <FormInput icon="mail" placeholder="New password" />
         <FormInput icon="location-on" placeholder="Retype new password" />
       </View>
-      <View style={styles.verticalBtnContainer}>
+      <View>
         <MainButton text="Change password" width={92} />
         <MainButton
           backgroundColor="white"

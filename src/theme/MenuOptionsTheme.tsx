@@ -25,7 +25,7 @@ export const styleMenuTheme = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    top: 300,
+    top: 290,
   },
   icons: {
     top: 180,
