@@ -12,7 +12,10 @@ const LoginUserScreen = ({ navigation }: MyStackScreenProps) => {
     <View style={styles.main}>
       <Logo />
       <UserLoginForm action={() => navigation.navigate('PaswordUserScreen')} />
-      <RuleLogin text="register" />
+      <RuleLogin
+        text="Registrer"
+        action={() => navigation.navigate('RegisterScreen')}
+      />
       <ButtonsLoginIcons />
     </View>
   );

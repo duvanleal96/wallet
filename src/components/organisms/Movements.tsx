@@ -13,7 +13,7 @@ interface Props {
 }
 
 const Movements = ({ title, amount, image, date, income, outcome }: Props) => {
-  const currencyFormat = (number: string) => {
+  const currencyFormat = (number: number) => {
     return (
       '$' +
       Number(number)

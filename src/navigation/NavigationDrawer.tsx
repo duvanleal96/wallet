@@ -4,6 +4,7 @@ import { StackNavigation } from './StackNavigation';
 import { MyDrawerContentComponentProps } from '../interface/MyDrawerContentComponentProps';
 import { MenuOptions } from '../components/organisms/MenuOptions';
 import { TabNavigation } from './TabNavigation';
+import { RegistrerScreen } from '../screens/RegistrerScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -33,6 +34,15 @@ export function NavigationDrawer() {
           headerStyle: {
             backgroundColor: 'blue',
           },
+        }}
+      />
+      <Drawer.Screen
+        name="RegisterScreen"
+        component={RegistrerScreen}
+        options={{
+          drawerItemStyle: { display: 'none' },
+          headerShown: false,
+          swipeEnabled: false,
         }}
       />
     </Drawer.Navigator>

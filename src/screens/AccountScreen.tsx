@@ -3,7 +3,6 @@ import { FlatList, ListRenderItemInfo, View } from 'react-native';
 import { StyleAccountTheme } from '../theme/AccountTheme';
 import { DataInterface } from '../interface/DataInterface';
 import { AccountBalance } from '../components/molecules/AccountBalance';
-import { styles } from '../theme/WalletTheme';
 import Movements from '../components/organisms/Movements';
 
 const timeElapsed: number = Date.now();
