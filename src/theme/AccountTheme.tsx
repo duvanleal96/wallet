@@ -8,8 +8,9 @@ export const StyleAccountTheme = StyleSheet.create({
   circle: {
     backgroundColor: 'blue',
     borderRadius: 10000000,
-    bottom: 500,
-    height: 10000,
+    //bottom: 500,
+    top: -1050,
+    height: 1200,
     left: -400,
     position: 'absolute',
     width: 1000,

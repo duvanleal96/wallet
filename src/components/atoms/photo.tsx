@@ -1,24 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Image } from 'react-native';
-import { styles } from '../../theme/LaunchTheme';
+import { useSelector } from 'react-redux';
+import { AuthContext } from '../../context/AuthContext';
+import { styleMenuTheme } from '../../theme/MenuOptionsTheme';
 
-interface Props {
-  size?: number;
-  customStyle?: any;
-}
-
-const Photo = ({ size, customStyle }: Props) => {
+const Photo = () => {
+  const { client } = useSelector((state: any) => state.client);
+  const { userData } = useContext(AuthContext);
   return (
     <Image
-      style={getPhotoStyles(size, customStyle)}
-      source={require('../../../assets/images/avatar.png')}
+      source={{ uri: userData ? client.photo : null }}
+      //source={require('../../../assets/images/avatar.png')}
+      style={styleMenuTheme.avatarImage}
     />
   );
 };
-function getPhotoStyles(size?: number, customStyle?: any) {
-  return size
-    ? { ...styles.logo, width: size, height: size, ...customStyle }
-    : styles.logo;
-}
 
 export default Photo;
