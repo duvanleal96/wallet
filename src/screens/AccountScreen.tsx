@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { FlatList, ListRenderItemInfo, View } from 'react-native';
 import { StyleAccountTheme } from '../theme/AccountTheme';
 import { DataInterface } from '../interface/DataInterface';
 import { AccountBalance } from '../components/molecules/AccountBalance';
 import Movements from '../components/organisms/Movements';
+import { AuthContext } from '../context/AuthContext';
 
 const timeElapsed: number = Date.now();
 const today = new Date(timeElapsed);
@@ -38,7 +39,15 @@ const movements: DataInterface[] = [
   },
 ];
 
-export const AccountScreen = () => {
+export const AccountScreen = ({ navigation }: any) => {
+  /*const { loggedIn } = useContext(AuthContext);
+  useEffect(() => {
+    if (loggedIn === false) {
+      //   navigation.dispatch(StackActions.replace('Login'));
+      navigation.navigate('LaunchScreen');
+    }
+  }, [loggedIn, navigation]);*/
+
   const renderTransactions = ({ item }: ListRenderItemInfo<DataInterface>) => (
     <Movements
       title={item.title}

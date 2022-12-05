@@ -24,7 +24,7 @@ const AuthContextProvider = (props: any) => {
 
   const getUserData = async (id?: string) => {
     const idToken = id ? id : await SInfo.getItem('idToken', {});
-    const { name, picture, exp } = jwtDecode<any>(idToken);
+    const { name, picture, exp, email } = jwtDecode<any>(idToken);
     const data = jwtDecode<any>(idToken);
     console.log('data JWT', JSON.stringify(data, null, 2));
 
@@ -35,6 +35,7 @@ const AuthContextProvider = (props: any) => {
     return {
       name,
       picture,
+      email,
     };
   };
 
@@ -73,7 +74,9 @@ const AuthContextProvider = (props: any) => {
       const credentials = await auth0.webAuth.authorize({
         scope: 'openid email profile',
       });
+      // Aquí se obtiene el token JWT
       await SInfo.setItem('idToken', credentials.idToken, {});
+      // Se obtiene la información del usuario
       const user_data = await getUserData(credentials.idToken);
       setLoggedIn(true);
       setUserData(user_data);

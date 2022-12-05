@@ -4,30 +4,42 @@ export const styleMenuTheme = StyleSheet.create({
   main: {
     width: '100%',
     backgroundColor: 'white',
+    flexDirection: 'column',
+    padding: 16,
   },
   container: {
     alignItems: 'center',
-    top: 480,
+    top: 400,
+    backgroundColor: 'white',
   },
   containerPhoto: {
     alignItems: 'center',
     top: 30,
   },
-  textLogo: {
-    fontSize: 18,
-    fontWeight: '700',
+  textAccountName: {
+    fontSize: 23,
+    alignSelf: 'center',
+    fontWeight: '500',
     color: 'black',
-    fontFamily: 'Montserrat',
-    bottom: -120,
+    marginBottom: 60,
   },
   containerRule: {
     alignSelf: 'center',
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    top: 290,
+    top: 180,
+    backgroundColor: 'white',
   },
   icons: {
-    top: 180,
+    top: 70,
+  },
+  avatarImage: {
+    width: 120,
+    height: 120,
+    borderRadius: 600,
+    alignSelf: 'center',
+    margin: 10,
+    marginTop: 30,
   },
 });

@@ -1,18 +1,19 @@
 import { View } from 'react-native';
-import React from 'react';
+import React, { useContext } from 'react';
 import { MyDrawerContentComponentProps } from '../../interface/MyDrawerContentComponentProps';
 import { stylesLoginUser } from '../../theme/LoginUserTheme';
 import { styleMenuTheme } from '../../theme/MenuOptionsTheme';
 import LogoLaunch from '../atoms/LogoLaunch';
 import Photo from '../atoms/photo';
-import TextMenu from '../atoms/TextMenu';
 import { IconsMenu } from '../molecules/IconsMenu';
+import { AuthContext } from '../../context/AuthContext';
+import { TextMenu } from '../atoms/TextMenu';
 
 export const MenuOptions = ({ navigation }: MyDrawerContentComponentProps) => {
+  const { logout } = useContext(AuthContext);
   return (
     <View style={styleMenuTheme.main}>
-      <View style={styleMenuTheme.containerPhoto}>
-        <Photo size={110} />
+      <View>
         <TextMenu />
       </View>
       <View style={styleMenuTheme.containerRule}>
@@ -32,7 +33,7 @@ export const MenuOptions = ({ navigation }: MyDrawerContentComponentProps) => {
           icon="bookmark"
           action={() => navigation.navigate('ChangeThemeScreen')}
         />
-        <IconsMenu icon="close" text="Logout" />
+        <IconsMenu icon="close" text="Logout" action={logout()} />
       </View>
     </View>
   );

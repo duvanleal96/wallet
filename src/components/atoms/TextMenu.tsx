@@ -1,19 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Text } from 'react-native';
+import { useSelector } from 'react-redux';
+import { AuthContext } from '../../context/AuthContext';
 import { styleMenuTheme } from '../../theme/MenuOptionsTheme';
 
-interface Props {
-  size?: number;
-  customStyle?: any;
-}
-
-const TextMenu = ({ size }: Props) => {
-  return <Text style={getTextStyles(size)}>Duvan Leal</Text>;
+export const TextMenu = () => {
+  const { client } = useSelector((state: any) => state.client);
+  const { userData } = useContext(AuthContext);
+  return (
+    <Text style={styleMenuTheme.textAccountName}>
+      {userData ? client.name : null}
+    </Text>
+  );
 };
-
-function getTextStyles(size?: number, customStyle?: any) {
-  return size
-    ? { ...styleMenuTheme.textLogo, fontSize: size, ...customStyle }
-    : styleMenuTheme.textLogo;
-}
-export default TextMenu;
