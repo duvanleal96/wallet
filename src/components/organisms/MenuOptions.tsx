@@ -14,6 +14,7 @@ export const MenuOptions = ({ navigation }: MyDrawerContentComponentProps) => {
   return (
     <View style={styleMenuTheme.main}>
       <View>
+        <Photo />
         <TextMenu />
       </View>
       <View style={styleMenuTheme.containerRule}>

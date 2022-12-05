@@ -1,10 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { FlatList, ListRenderItemInfo, View } from 'react-native';
 import { StyleAccountTheme } from '../theme/AccountTheme';
 import { DataInterface } from '../interface/DataInterface';
 import { AccountBalance } from '../components/molecules/AccountBalance';
 import Movements from '../components/organisms/Movements';
-import { AuthContext } from '../context/AuthContext';
 
 const timeElapsed: number = Date.now();
 const today = new Date(timeElapsed);

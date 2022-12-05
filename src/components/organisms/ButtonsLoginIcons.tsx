@@ -9,7 +9,7 @@ export const ButtonsLoginIcons = ({ navigation }: MyStackScreenProps) => {
   const { login, loggedIn } = useContext(AuthContext);
   useEffect(() => {
     if (loggedIn) {
-      console.log('estas loggeado');
+      navigation.navigate('TabNavigation');
     }
   }, [loggedIn, navigation]);
   return (
