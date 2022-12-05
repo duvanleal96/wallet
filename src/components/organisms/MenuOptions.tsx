@@ -30,7 +30,7 @@ export const MenuOptions = ({ navigation }: MyDrawerContentComponentProps) => {
         <IconsMenu
           text="Change App Theme"
           icon="bookmark"
-          action={() => navigation.navigate('ThemesScreen')}
+          action={() => navigation.navigate('ChangeThemeScreen')}
         />
         <IconsMenu icon="close" text="Logout" />
       </View>
