@@ -1,12 +1,11 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import { Amount } from '../components/molecules/Amount';
 import { FormInput } from '../components/molecules/FormInput';
 import { MainButton } from '../components/atoms/MainButton';
 import { StyleLoansTheme } from '../theme/LoansTheme';
-import { MyStackScreenProps } from '../interface/MyStackScreenProps';
 
-export const LoansScreen = ({ navigation }: MyStackScreenProps) => {
+export const LoansScreen = () => {
   return (
     <View>
       <View style={StyleLoansTheme.container}>

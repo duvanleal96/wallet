@@ -7,13 +7,22 @@ import { TabNavigation } from './TabNavigation';
 import { RegistrerScreen } from '../screens/RegistrerScreen';
 import { ChangePasswordScreen } from '../screens/ChangePasswordScreen';
 import { ChangeThemeScreen } from '../screens/ChangeThemeScreen';
+//import { useSelector } from 'react-redux';
 
 const Drawer = createDrawerNavigator();
 
 export function NavigationDrawer() {
+  //const { client } = useSelector((state: RootState) => state.client);
   return (
     <Drawer.Navigator
       initialRouteName="home"
+      screenOptions={{
+        unmountOnBlur: true,
+        headerStyle: {
+          // backgroundColor: client.appColor ?? '#1554F6',
+          shadowColor: 'transparent',
+        },
+      }}
       drawerContent={(props: MyDrawerContentComponentProps) => (
         <MenuOptions {...props} />
       )}>

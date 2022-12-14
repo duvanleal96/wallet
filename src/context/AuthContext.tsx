@@ -9,10 +9,8 @@ const auth0 = new Auth0({
   clientId: 'pNF6fMQYna8mXEiOBK53xttEky3hKVw5',
 });
 
-const AuthContext = React.createContext<any>(null);
-
 const AuthContextProvider = (props: any) => {
-  const [loading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [loggedIn, setLoggedIn] = useState<boolean>();
   const [userData, setUserData] = useState<
     | {
@@ -23,7 +21,9 @@ const AuthContextProvider = (props: any) => {
   >();
 
   const getUserData = async (id?: string) => {
+    // Saco el token del SInfo, algo que deberíamos cambiar por el Redux
     const idToken = id ? id : await SInfo.getItem('idToken', {});
+    // Decodifico el token (JWT)
     const { name, picture, exp, email } = jwtDecode<any>(idToken);
     const data = jwtDecode<any>(idToken);
     console.log('data JWT', JSON.stringify(data, null, 2));
@@ -46,6 +46,7 @@ const AuthContextProvider = (props: any) => {
         if (user_data) {
           setLoggedIn(true);
           setUserData(user_data);
+          setLoading(false);
         }
       } catch (err) {
         setLoggedIn(false);
@@ -81,17 +82,21 @@ const AuthContextProvider = (props: any) => {
       setLoggedIn(true);
       setUserData(user_data);
     } catch (err) {
+      console.log('err login :>> ', err);
       Alert.alert('Error logging in');
     }
   };
 
   const logout = async () => {
     try {
+      // Limpiando la sesión en Auth0
       await auth0.webAuth.clearSession({});
+      // Limpiando la sesión. En nuestro caso sería en el Redux
       await SInfo.deleteItem('idToken', {});
       setLoggedIn(false);
       setUserData(undefined);
     } catch (err) {
+      console.log('err', err);
       Alert.alert('Error logging in');
     }
   };
@@ -106,4 +111,6 @@ const AuthContextProvider = (props: any) => {
     <AuthContext.Provider value={value}>{props.children}</AuthContext.Provider>
   );
 };
+const AuthContext = React.createContext<any>(null);
+
 export { AuthContext, AuthContextProvider };
