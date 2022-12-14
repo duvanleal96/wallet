@@ -7,6 +7,7 @@ import { TabNavigation } from './TabNavigation';
 import { RegistrerScreen } from '../screens/RegistrerScreen';
 import { ChangePasswordScreen } from '../screens/ChangePasswordScreen';
 import { ChangeThemeScreen } from '../screens/ChangeThemeScreen';
+import LoginUserScreen from '../screens/LoginUserScreen';
 //import { useSelector } from 'react-redux';
 
 const Drawer = createDrawerNavigator();

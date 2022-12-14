@@ -14,12 +14,10 @@ const LoginUserScreen = ({ navigation }: MyStackScreenProps) => {
   const { loggedIn, loading } = useContext(AuthContext);
 
   useEffect(() => {
-    if (loggedIn) {
+    if (loggedIn && loading) {
       navigation.navigate('LoadingScreen');
-    } else {
-      Alert.alert('oh ha ocurrido un error en el loggeo');
     }
-  }, [loggedIn, navigation]);
+  }, [loggedIn, loading, navigation]);
   useEffect(() => {
     const backAction = () => {
       if (navigation.isFocused()) {

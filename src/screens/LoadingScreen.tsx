@@ -1,16 +1,22 @@
-import React, { useEffect, useContext } from 'react';
-import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import { StackActions } from '@react-navigation/native';
+import React, { useEffect, useContext } from 'react';
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 
 import { AuthContext } from '../context/AuthContext';
 import { MyStackScreenProps } from '../interface/MyStackScreenProps';
 
 function LoadingScreen({ navigation }: MyStackScreenProps) {
-  const { loading, loggedIn } = useContext(AuthContext);
+  const { loading, loggedIn, logout } = useContext(AuthContext);
 
   useEffect(() => {
     if (loggedIn) {
-      navigation.dispatch(StackActions.replace('AccountScreen'));
+      navigation.navigate('TabNavigation');
     } else if (loggedIn === false) {
       navigation.dispatch(StackActions.replace('LoginUserScreen'));
     }
@@ -23,6 +29,9 @@ function LoadingScreen({ navigation }: MyStackScreenProps) {
           <ActivityIndicator size="large" />
           <View style={{ marginTop: 10 }}>
             <Text>Please wait...</Text>
+            <TouchableOpacity onPress={() => logout()}>
+              <Text>logout</Text>
+            </TouchableOpacity>
           </View>
         </React.Fragment>
       )}

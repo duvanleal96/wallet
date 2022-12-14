@@ -4,11 +4,11 @@ import { AuthContext } from '../../context/AuthContext';
 import { styleMenuTheme } from '../../theme/MenuOptionsTheme';
 
 const Photo = () => {
-  //const { userData } = useContext(AuthContext);
+  const { userData } = useContext(AuthContext);
   return (
     <Image
-      //source={{ uri: userData.photo }}
-      source={require('../../../assets/images/avatar.png')}
+      source={{ uri: userData?.picture }}
+      //source={require('../../../assets/images/avatar.png')}
       style={styleMenuTheme.avatarImage}
     />
   );

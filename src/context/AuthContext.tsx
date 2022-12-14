@@ -60,11 +60,13 @@ const AuthContextProvider = (props: any) => {
         if (loggedIn) {
           const user_data = await getUserData();
           if (user_data) {
+            setLoading(true);
             setLoggedIn(true);
             setUserData(user_data);
           }
         }
       } catch (err) {
+        console.log('error no esta conectado' + err);
         Alert.alert('Error logging in');
       }
     })();
@@ -82,8 +84,8 @@ const AuthContextProvider = (props: any) => {
       setLoggedIn(true);
       setUserData(user_data);
     } catch (err) {
-      console.log('err login :>> ', err);
-      Alert.alert('Error logging in');
+      console.log('error en el logueo :>> ', err);
+      Alert.alert('Error in login');
     }
   };
 
@@ -96,8 +98,8 @@ const AuthContextProvider = (props: any) => {
       setLoggedIn(false);
       setUserData(undefined);
     } catch (err) {
-      console.log('err', err);
-      Alert.alert('Error logging in');
+      console.log('err en cierre de sesion', err);
+      Alert.alert('Error logout in' + err);
     }
   };
   const value = {

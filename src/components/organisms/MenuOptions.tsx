@@ -34,7 +34,14 @@ export const MenuOptions = ({ navigation }: MyDrawerContentComponentProps) => {
           icon="bookmark"
           action={() => navigation.navigate('ChangeThemeScreen')}
         />
-        <IconsMenu icon="close" text="Logout" action={logout()} />
+        <IconsMenu
+          icon="close"
+          text="Logout"
+          action={() => {
+            logout();
+            navigation.navigate('LoginUserScreen');
+          }}
+        />
       </View>
     </View>
   );
