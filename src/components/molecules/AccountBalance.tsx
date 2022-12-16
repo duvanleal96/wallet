@@ -4,20 +4,20 @@ import { StyleAccountTheme } from '../../theme/AccountTheme';
 import useCurrency from '../../hooks/UseCurrency';
 
 interface Props {
-  balance?: number;
+  balance?: string;
 }
 
 export const AccountBalance = ({ balance }: Props) => {
   const { currencyFormat } = useCurrency();
   return (
-    <View style={StyleAccountTheme.container}>
+    <View style={StyleAccountTheme({}).container}>
       <Text
-        style={StyleAccountTheme.balance}
+        style={StyleAccountTheme({}).balance}
         numberOfLines={1}
         adjustsFontSizeToFit={true}>
-        {currencyFormat(balance ? balance : 0)}
+        {currencyFormat(Number(balance))}
       </Text>
-      <Text style={StyleAccountTheme.txt}>Balance in your account</Text>
+      <Text style={StyleAccountTheme({}).txt}>Balance in your account</Text>
     </View>
   );
 };

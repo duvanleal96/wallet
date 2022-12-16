@@ -1,7 +1,7 @@
 export interface DataInterface {
-  id: string;
   title: string;
   amount: number;
+  id: string;
   image: string;
   date: Date;
   income: string;

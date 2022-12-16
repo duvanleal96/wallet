@@ -1,15 +1,35 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ClientInterface } from '../interface/ClientInterface';
+import { ClientNotFoundInterface } from '../interface/ClientNotFoundInterface';
 
-const initialState: ClientInterface = {
+const initialState: ClientInterface | ClientNotFoundInterface = {
   id: '',
-  name: '',
+  fullName: '',
   email: '',
   phone: '',
   photo: 'https://reactjs.org/logo-og.png',
   state: 1,
-  createdAt: new Date(),
+  createdAt: null,
   updatedAt: null,
+  account: {
+    id: '',
+    idClient: '',
+    balance: '',
+    credit: '',
+    state: 0,
+    createdAt: null,
+    updatedAt: null,
+    deletedAt: null,
+    movementsIncome: [],
+    movementsOutcome: [],
+  },
+  app: {
+    id: '',
+    idClient: '',
+    color: '',
+    createdAt: null,
+    updatedAt: null,
+  },
 };
 
 const ClientSlice = createSlice({
